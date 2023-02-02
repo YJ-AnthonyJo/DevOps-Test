@@ -1,8 +1,23 @@
-import 'bootstrap/dist/css/bootstrap.css'
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { MantineProvider } from "@mantine/core";
+import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+    return (
+        <>
+            <RecoilRoot>
+                <MantineProvider
+                    withGlobalStyles
+                    withNormalizeCSS
+                    theme={{
+                        /** Put your mantine theme override here */
+                        colorScheme: "dark",
+                    }}
+                >
+                    <Component {...pageProps} />
+                </MantineProvider>
+            </RecoilRoot>
+        </>
+    );
 }
-export default MyApp
+export default MyApp;

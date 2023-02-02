@@ -1,15 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import LoginForm from "../components/login-form";
-import GetLoginedUser from "../components/get-logined-user";
+import RegisterForm from "../components/registration-form";
 import Link from "next/link";
-import { Box } from "@mantine/core";
 
-const Home: NextPage = () => {
+const Register: NextPage = () => {
     return (
         <div>
             <Head>
-                <title>Main Page</title>
+                <title>Register Page</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1"
@@ -29,12 +27,10 @@ const Home: NextPage = () => {
                 <Link href="/showuser">
                     <button>showuser</button>
                 </Link>
-                <Box mx="auto" sx={{ maxWidth: 300 }}>
-                    <GetLoginedUser />
-                </Box>
+                <RegisterForm />
             </main>
         </div>
     );
 };
 
-export default Home;
+export default Register;
