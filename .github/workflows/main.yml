@@ -27,8 +27,8 @@ jobs:
                   host: ${{ secrets.AWS_SSH_HOST }}
                   username: ${{ secrets.AWS_SSH_USERNAME }}
                   key: ${{ secrets.AWS_SSH_KEY }}
-                  source: "standalone"
-                  target: "~/"
+                  source: "standalone/*"
+                  target: "~/standalone"
 
             - name: SSH Commands
               uses: appleboy/ssh-action@v0.1.7
