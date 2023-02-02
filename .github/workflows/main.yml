@@ -20,9 +20,11 @@ jobs:
             - run: |
                   cd .next;
                   mv ./static ./standalone/.next/;
+                  pwd;
+                  ls -al;
 
             - name: Upload files via scp
-              uses: appleboy/scp-action@v0.1.3
+              uses: appleboy/scp-action@master
               with:
                   host: ${{ secrets.AWS_SSH_HOST }}
                   username: ${{ secrets.AWS_SSH_USERNAME }}
