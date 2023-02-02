@@ -27,7 +27,7 @@ jobs:
                   host: ${{ secrets.AWS_SSH_HOST }}
                   username: ${{ secrets.AWS_SSH_USERNAME }}
                   key: ${{ secrets.AWS_SSH_KEY }}
-                  source: "./standalone"
+                  source: "standalone"
                   target: "~/"
 
             - name: SSH Commands
