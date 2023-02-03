@@ -52,7 +52,7 @@ jobs:
                   username: ${{ secrets.AWS_SSH_USERNAME }}
                   key: ${{ secrets.AWS_SSH_KEY }}
                   source: "standalone"
-                  target: "~"
+                  target: "~/standalone"
                   rm: true
 
             - name: SSH Commands
