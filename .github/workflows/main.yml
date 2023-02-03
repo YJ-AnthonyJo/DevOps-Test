@@ -25,10 +25,25 @@ jobs:
  #             run: |
   #              pwd;
    #             tar -cvf deploy.tar ./standalone;
+            - name: upload for deploy job
+              uses: actions/upload-artifact@v3.1.2
+              with:
+                name: buildresult
+                path: standalone
     deploy:
         needs: build
         runs-on: ubuntu-latest
         steps:
+            - name: download build result
+              uses: actions/download-artifact@v3.0.2
+              with: 
+                name: buildresult
+            
+            - name: check build result
+              run: |
+                pwd;
+                ls;
+
             - name: Upload files via scp
               uses: appleboy/scp-action@master
               with:
@@ -37,6 +52,7 @@ jobs:
                   key: ${{ secrets.AWS_SSH_KEY }}
                   source: "standalone"
                   target: "~"
+                  rm: true
 
             - name: SSH Commands
               uses: appleboy/ssh-action@v0.1.7
