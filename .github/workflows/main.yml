@@ -18,7 +18,8 @@ jobs:
             - run: |
                   cd .next;
                   mv ./static ./standalone/.next/;
-                  mv standalone ..;
+                  mkdir ../buildresult
+                  mv standalone ../buildresult;
 
             # Runs a set of commands using the runners shell
 #            - name: making tar files
@@ -29,7 +30,7 @@ jobs:
               uses: actions/upload-artifact@v3.1.2
               with:
                 name: buildresult
-                path: standalone
+                path: buildresult
     deploy:
         needs: build
         runs-on: ubuntu-latest
