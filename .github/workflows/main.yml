@@ -26,6 +26,7 @@ jobs:
   #              pwd;
    #             tar -cvf deploy.tar ./standalone;
     deploy:
+        needs: build
         runs-on: ubuntu-latest
         steps:
             - name: Upload files via scp
