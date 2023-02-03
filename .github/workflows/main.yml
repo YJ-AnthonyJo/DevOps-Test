@@ -18,8 +18,7 @@ jobs:
             - run: |
                   cd .next;
                   mv ./static ./standalone/.next/;
-                  pwd;
-                  ls -al;
+                  mv standalone ..;
 
             # Runs a set of commands using the runners shell
 #            - name: making tar files
@@ -33,7 +32,7 @@ jobs:
                   host: ${{ secrets.AWS_SSH_HOST }}
                   username: ${{ secrets.AWS_SSH_USERNAME }}
                   key: ${{ secrets.AWS_SSH_KEY }}
-                  source: ".next/standalone"
+                  source: "standalone"
                   target: "~"
 
             - name: SSH Commands
