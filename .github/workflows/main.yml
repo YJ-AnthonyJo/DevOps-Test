@@ -34,7 +34,7 @@ jobs:
                   username: ${{ secrets.AWS_SSH_USERNAME }}
                   key: ${{ secrets.AWS_SSH_KEY }}
                   source: ".next/standalone"
-                  target: "~/standalone"
+                  target: "~"
 
             - name: SSH Commands
               uses: appleboy/ssh-action@v0.1.7
