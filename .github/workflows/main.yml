@@ -25,7 +25,9 @@ jobs:
  #             run: |
   #              pwd;
    #             tar -cvf deploy.tar ./standalone;
-
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
             - name: Upload files via scp
               uses: appleboy/scp-action@master
               with:
